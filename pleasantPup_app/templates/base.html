@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav class='top-nav'>
+
+            <a class='navbar-logo'href="#"><!-- <img src="#" alt="Pleasant Pup Logo"> -->Logo</a>
+            <a class='navbar-brand'href="#">PleasantPup</a>
+
+
+            <div>
+                <a href="#">Home</a>
+                <a href="{% url 'about' %}">About</a>
+                <a href="#">Profile</a>
+                <a href="#">Register</a>
+                <a href="#">Log in</a>
+                <a href="#">Log out</a>
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+
+
+
+
+
+    <footer>
+        <p id='copy-write'>&copy 2019  Pleasant Pup, LLC.</p>
+        <nav class='bottom-nav'>
+
+        </nav>
+    </footer>
+    
+</body>
+</html>
