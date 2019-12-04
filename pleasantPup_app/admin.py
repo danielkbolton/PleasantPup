@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Profile, Post
-from .models import Breed, Dog, DogProfile
+from .models import Profile, Post, Comment
+from .models import Breed, Dog
 
 
 # Register your models here.
@@ -8,7 +8,7 @@ from .models import Breed, Dog, DogProfile
 
 admin.site.register(Profile)
 admin.site.register(Post)
+admin.site.register(Comment)
 
 admin.site.register(Breed)
 admin.site.register(Dog)
-admin.site.register(DogProfile)

@@ -47,7 +47,7 @@ class Breed(models.Model):
     care = models.TextField(default=0)
     health = models.TextField(default=0)
     history_background = models.TextField(default=0)
-    image_link = models.TextField()
+    image_link = models.TextField(default="No image provided")
     # image_upload = models.ImageField(upload_to='prof_images/')
 
     def __str__(self):
@@ -56,19 +56,14 @@ class Breed(models.Model):
 class Dog(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='dog')
     name = models.CharField(max_length=200)
-    breed = models.ForeignKey(Breed, on_delete=models.CASCADE, related_name='breeds')
- 
-    def __str__(self):
-        return self.name
-
-class DogProfile(models.Model):
-    dog = models.ForeignKey(Dog, on_delete=models.CASCADE, related_name='dog_profile')
     age = models.TextField(default=0)
-    image = models.TextField()
+    breed = models.ForeignKey(Breed, on_delete=models.CASCADE, related_name='breeds')
+    image_link = models.TextField(default="No image provided")
     # image_upload = models.ImageField(upload_to='prof_images/')
 
     def __str__(self):
-        return self.dog
+        return self.name
+
 
 """ ---------- END DOG CLASSES ---------- """
 
