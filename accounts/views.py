@@ -88,6 +88,7 @@ def prof_pic_edit(request):
     username = user.username
     profile = Profile.objects.get(user_id=user.id)
     prof_pic_link = profile.image_link    
+
     if request.method == 'POST':
         form = ProfPicForm(request.POST, instance=profile)
         if form.is_valid():
@@ -97,5 +98,5 @@ def prof_pic_edit(request):
         profile.image_link = ''
         profile.save()
         form = ProfPicForm()
-    context = {'user': user, 'username': username, 'prof_pic_link': prof_pic_link}
+    context = {'user': user, 'username': username, 'form': form, 'prof_pic_link': prof_pic_link}
     return render(request, 'profile.html', context)

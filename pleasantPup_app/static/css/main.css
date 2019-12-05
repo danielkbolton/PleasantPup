@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+
+
 /* ---------- START BASE PAGE STYLING ---------- */
 
 nav{
@@ -80,8 +82,13 @@ nav{
     transform: translateX(0%);
 }
 
-
-
+footer {
+    background: cornflowerblue;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+}
+ 
 
 /* ---------- END BASE PAGE STYLING ---------- */
 
@@ -145,3 +152,127 @@ li {
 
 
 /* ---------- END LANDING PAGE STYLING ---------- */
+
+
+
+
+
+/* ----------------- Base ----------------- */
+
+:root {
+    
+  
+    --pale-green: #fcfffb;
+    --crimson: #D61B28;
+    --tan: #eadaba;
+    --brown: #421813;
+   
+    --text-sub: #777;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+.btn {
+    -webkit-box-shadow: 4px 4px 25px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 4px 25px -8px rgba(0,0,0,0.75);
+    box-shadow: 4px 4px 25px -8px rgba(0,0,0,0.75);
+}
+
+/*----------------- Register ----------------*/
+
+.register-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.auth-btn {
+    text-align: center;
+}
+
+/*----------------- Login ----------------*/
+
+.login-form {
+    color: var(--text-primary);
+    padding: 50px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+
+
+
+/*------------------ Profile --------------------*/
+
+.btn {
+    width:100px;
+    height: 50px;
+    background-color: cornflowerblue;
+}
+.btn:hover {
+    background:rgb(81, 133, 230);
+} 
+
+.prof-pic-section img {
+    width: 100%;
+}
+
+.prof-pic-btn {
+    margin: 0 auto;
+}
+
+.prof-pic-btn-change {
+    margin-top: 10px;
+}
+
+.prof-pic-section {
+    text-align: center;
+}
+
+.prof-pic-section img {
+    margin-top: ;
+    max-width: 400px;
+    border-radius: 30px;
+}
+
+.profile-section {
+    
+    padding: 30px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    -webkit-box-shadow: 4px 4px 25px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 4px 25px -8px rgba(0,0,0,0.75);
+    box-shadow: 4px 4px 25px -8px rgba(0,0,0,0.75);
+    width: 50%;
+    border-radius: 20px;
+};
+
+#id_image_link {
+    width: 100%;
+}
+
+.profile-section-header {
+    display: inline;
+    margin: 0 0 10px 10px;
+}
+
+
+
+
+.list-group {
+    margin-top: 15px;
+}
+
+
+
+
+
+#id_image_link {
+    width: 100%;
+}
