@@ -28,10 +28,18 @@
     {% endif %}
 </div>
 
-<div class="profile-section">
-    {% for dog in dogs  %}
-    <p>{{ dog }}</p>
-    {% endfor %}
+<div class="dog-section">
+    <h2>Your Dogs</h2>
+    <div class="dogs-container">
+        {% for dog in user.dogs.all %}
+        <p>{{dog.name}}</p>
+
+        <div class="dog-buttons">
+            <button class="dog-edit">edit</button>
+            <button class="dog-delete">delete</button>
+        </div>
+        {% endfor %}
+    </div>
 </div>
 
 

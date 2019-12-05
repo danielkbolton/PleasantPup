@@ -242,7 +242,7 @@ li {
 }
 
 .profile-section {
-    
+    text-align: center;
     padding: 30px;
     margin: 0 auto;
     margin-bottom: 25px;
@@ -275,4 +275,22 @@ li {
 
 #id_image_link {
     width: 100%;
+}
+
+.dog-section {
+
+    text-align: center;
+    padding: 30px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    -webkit-box-shadow: 4px 4px 25px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 4px 25px -8px rgba(0,0,0,0.75);
+    box-shadow: 4px 4px 25px -8px rgba(0,0,0,0.75);
+    width: 50%;
+    border-radius: 20px;
+};
+.dogs-container {
+    display: flex;
+    flex-direction:row ;
+    justify-content: space-around;
 }

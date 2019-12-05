@@ -54,7 +54,7 @@ class Breed(models.Model):
         return self.breed
 
 class Dog(models.Model):
-    owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='dog')
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='dogs')
     name = models.CharField(max_length=200)
     age = models.TextField(default=0)
     breed = models.ForeignKey(Breed, on_delete=models.CASCADE, related_name='breeds')
