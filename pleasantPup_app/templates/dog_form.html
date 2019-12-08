@@ -1,6 +1,29 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    {% if dog %}
+        {% if dog.owner == user %}
+            <section>
+                <h1>{{header}}</h1>
+                <form method="POST">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+            </section>
+        {% endif %}
+    {% else %}
+        <section>
+            <h1>{{header}}</h1>
+            <form method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </section>
+
+    {% endif %}
+
 
 {% endblock %}
 

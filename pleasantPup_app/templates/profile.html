@@ -28,18 +28,24 @@
     {% endif %}
 </div>
 
+
+
+
 <div class="dog-section">
     <h2>Your Dogs</h2>
     <div class="dogs-container">
         {% for dog in user.dogs.all %}
         <p>{{dog.name}}</p>
+        <img src="{{dog.image_link}}" alt="">
+       
 
         <div class="dog-buttons">
-            <button class="dog-edit">edit</button>
-            <button class="dog-delete">delete</button>
+            <a href="{% url 'dog_edit' dog_pk=dog.pk %}">Edit</a>
+            <a href="{% url 'dog_delete' dog_pk=dog.pk %}">Delete</a>
         </div>
         {% endfor %}
     </div>
+    <a href="{% url 'dog_create' %}">create dog</a>
 </div>
 
 
