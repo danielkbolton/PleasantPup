@@ -30,8 +30,8 @@ def about(request):
 @csrf_exempt
 def dog_profile(request, dog_pk):
     dog = Dog.objects.get(id=dog_pk)
-    context['dog':dog]
-    return render(request, 'dog_profile.html', context)
+    context = {'dog':dog}
+    return render(request, 'dog_profile.html',context)
 
 
 

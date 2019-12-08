@@ -36,7 +36,10 @@
     <div class="dogs-container">
         {% for dog in user.dogs.all %}
         <p>{{dog.name}}</p>
-        <img src="{{dog.image_link}}" alt="">
+        <a href="{% url 'dog_profile' dog_pk=dog.pk %}">
+            <img class="dog-img" src="{{dog.image_link}}" alt="">
+        </a>
+        
        
 
         <div class="dog-buttons">

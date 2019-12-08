@@ -294,3 +294,23 @@ li {
     flex-direction:row ;
     justify-content: space-around;
 }
+
+
+a {
+    margin:15px;
+}
+
+
+.dog-img {
+    width:150px;
+    height: 201px;
+}
+
+.dog-proPick {
+    width: 150px;
+    height: 201px;
+}
+
+p{
+    width:80vw;
+}
