@@ -7,10 +7,18 @@
     <div class="post">
       <p class='post-title'>{{ post.title }}</p>
       <img class='post-img' src="{{post.image_link}}" alt="">
-      <p class='post-body'>{{post.body}}</p>
+      <p class='post-body'>{{post.content}}</p>
+      {% if post.author == user %}
+      <div>
+        <a class='edit_post' href="{% url 'post_edit' pk=post.pk %}">Edit</a> /
+        <a class='delete_post' href="{% url 'post_delete' pk=post.pk %}">Delete</a>
+      </div>
+      {% endif %}
     </div>
     <div class="post-nav">
+        <img class='post-img' src="{{post.author.profile.image_link}}" alt="">
       <p class='posst-author'>Posted by <a href="#">{{ post.author }}</a></p>
+      
       <a class='comments-link' href="{% url 'post_detail' pk=post.pk %}">comments</a>
     </div>
   </div>
