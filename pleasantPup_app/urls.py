@@ -23,5 +23,18 @@ urlpatterns = [
     path('dog/<int:dog_pk/', views.dog_profile, name='dog_profile'),
     path('dog/<int:dog_pk>/edit/', views.dog_edit, name='dog_edit'),
     path('dog/<int:dog_pk>/delete/',views.dog_delete, name='dog_delete'),
-    path('dog/<int:dog_pk>/profile', views.dog_profile, name='dog_profile')
+    path('dog/<int:dog_pk>/profile', views.dog_profile, name='dog_profile'),
+
+
+
+    path('posts/',views.post_list, name='post_list'),
+    path('post/new/', views.post_create, name='post_create'),
+    path('post/<int:pk>/', views.post_detail, name='post_detail'),
+    path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
+    path('post/<int:pk>/delete/', views.post_delete, name='post_delete'),
+    path('post/<int:pk>/comment/new/', views.comment_create, name='comment_create'),
+    path('post/<int:pk>/comment/<int:comment_pk>/edit/', views.comment_edit, name='comment_edit'),
+    path('post/<int:pk>/comment/<int:comment_pk>/delete/', views.comment_delete, name='comment_delete'),
+
+
 ]

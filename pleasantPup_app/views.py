@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 
-from .forms import DogForm
+from .forms import DogForm, PostForm, CommentForm
 from .models import Profile, Post, Comment, Breed, Dog
 
 
@@ -114,3 +114,92 @@ def come(request):
     return render(request, 'come.html')
 
 
+
+""" POSTS """
+
+
+def post_list(request):
+    posts = list(Post.objects.all())
+    context = {'posts': posts}
+    return render(request, 'post_list.html', context)
+
+    
+def post_create(request):
+    if request.method == 'POST':
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save()
+            return redirect('post_list')
+    else:
+        form = PostForm()
+        context = {'form':form,'header':'Add New Post'}
+        return render(request, 'post_form.html', context)
+
+
+
+
+def post_detail(request,pk):
+    post = Post.objects.get(id=pk)
+    context = {'post': post}
+    return render(request, 'post_detail.html', context)
+
+
+
+def post_edit(request,pk):
+    post = Post.objects.get(id=pk)
+    if request.method == 'POST':
+        form = PostForm(request.POST, instance=post)
+        if form.is_valid():
+            post = form.save()
+            return redirect('post_detail', pk=post.pk)
+    else:
+        form = PostForm(instance=post)
+    context = {'form':form, 'header': f'Edit {post.title} by {post.author} '}
+    return render(request, 'post_form.html', context)
+
+
+
+def post_delete(request,pk):
+    Post.objects.get(id=pk).delete()
+    return redirect('post_list')
+
+
+
+""" COMMENTS """
+
+
+
+def comment_create(request,pk):
+    post = Post.objects.get(id=pk)
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.post = post
+            comment.save()
+            return redirect('post_detail', pk=post.pk)
+    else:
+        form = CommentForm()
+    context = {'form': form, 'header': f'Add Comment to {post.title} by {post.author}'}
+    return render(request, 'comment_form.html', context)
+
+
+
+def comment_edit(request,pk,comment_pk):
+    comment = Comment.objects.get(id=comment_pk)
+    post = Post.objects.get(id=pk)
+    if request.method == 'POST':
+        form = CommentForm(request.POST, instance=comment)
+        if form.is_valid():
+            comment = form.save()
+            return redirect('post_detail', pk=post.pk)
+    else:
+        form = CommentForm(instance=comment)
+    context = {'form': form, 'header': f'Edit Comment to {post.title} by {post.author}'}
+    return render(request, 'comment_form.html', context)
+
+
+def comment_delete(request,pk,comment_pk):
+    post = Post.objects.get(id=pk)
+    Comment.objects.get(id=comment_pk).delete()
+    return redirect('post_detail', pk=post.pk)            

@@ -1,7 +1,7 @@
 from django import forms
 #from django.forms.widgets import DateTimeInput
 
-from . models import Profile, Dog, Breed
+from . models import Profile, Dog, Breed, Post, Comment
 
 
 class DogForm(forms.ModelForm):
@@ -24,3 +24,19 @@ class ProfPicForm(forms.ModelForm):
         widgets = {
             'image_link': forms.TextInput(attrs={'class': 'form-control col'})
         }
+
+
+
+class PostForm(forms.ModelForm):
+
+    class Meta:
+        model = Post
+        fields = ('author','title','content','image_link')
+
+
+
+class CommentForm(forms.ModelForm):
+
+    class Meta:
+        model = Comment
+        fields = ('author','content')
