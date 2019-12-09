@@ -20,6 +20,9 @@ def landing(request):
 def about(request):
     return render(request, 'about.html')
 
+def training(request):
+    return render(request, 'training.html')
+
 """ def home(request):
     return render(request, 'home.html') """
 
@@ -76,3 +79,38 @@ def dog_delete(request, dog_pk):
     dog= Dog.objects.get(id=dog_pk)
     dog.delete()
     return redirect('profile')
+
+
+
+
+""" TRAINING VIEWS """
+
+def name(request):
+    return render(request, 'name.html')
+
+def sit(request):
+    return render(request, 'sit.html')
+
+def sit2(request):
+    return render(request, 'sit2.html')
+
+def sit3(request):
+    return render(request, 'sit3.html')
+
+
+def down(request):
+    return render(request, 'down.html')
+
+def stand(request):
+    return render(request, 'stand.html')
+
+def stay(request):
+    return render(request, 'stay.html')
+
+def settle(request):
+    return render(request, 'settle.html')
+
+def come(request):
+    return render(request, 'come.html')
+
+

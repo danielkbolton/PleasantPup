@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+
+<!--------- START BASIC COMMANDS ---------->
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <a href="{% url 'name' %}"><h2>Name Recognition</h2></a>
+            <p>It seems a little silly to formally teach your dog it's name, but this dog training command can be very useful to call your dog's attention. When formally trained it can be more reliable too.. </p>
+        </div>
+        <div class="col-md-4">
+            <a href="{% url 'sit' %}"><h2>Sit</h2></a>
+            <p>This is the most basic of all dog obedience commands. All dogs can learn this cue in 5 minutes. I separated this command into 3 articles, from basic to advance levels to teach you how to progress with ANY dog training command until you get a reliable response. </p>  
+            <a href="{% url 'sit2' %}">Sit Level 2</a>
+            <a href="{% url 'sit3' %}">Sit Level 3</a>
+        </div>
+        <div class="col-md-4">
+            <a href="{% url 'down' %}"><h2>Down</h2></a>
+            <p>Also a basic dog command but very useful. A dog that is laying down cannot jump, steal things and if you train down with a head down, he can't bark either!</p>
+        </div>
+        <div class="col-md-4">
+            <a href="{% url 'stand' %}"><h2>Stand</h2></a>
+            <p>Why would you ever want to teach the dog command stand to your dog? Many reasons, you can get him to stand up from the couch/bed easily and you can keep him in a stand position at the vet.</p>
+        </div>
+        <div class="col-md-4">
+            <a href="{% url 'stay' %}"><h2>Stay</h2></a>
+            <p>Very useful command to keep your dog in one position for a longer period of time.</p>
+        </div>
+        <div class="col-md-4">
+            <a href="{% url 'settle' %}"><h2>Settle</h2></a>
+            <p> If you need your dog to stop running around like crazy, this is the command to teach him/her.</p>
+        </div>
+        <div class="col-md-4">
+            <a href="{% url 'come' %}"><h2>Come When Called</h2></a>
+            <p>One of the most important dog training commands to teach your canine friend. If he can be recalled, he won't run away.</p>
+        </div>
+    </div>
+    <hr>
+</div> 
+<!--------- END BASIC COMMANDS ---------->
+    
+
+
+{% endblock %}
