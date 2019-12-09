@@ -52,4 +52,29 @@
 </div>
 
 
+
+
+
+<div class="dog-section">
+    <div class="container">
+        <div class="row">
+            {% for dog in user.dogs.all %}
+            <h2>{{dog.name}}</h2>
+            <a href="{% url 'dog_profile' dog_pk=dog.pk %}">
+                <img class="dog-img" src="{{dog.image_link}}" alt="">
+            </a>
+            <div>
+                <a href="{% url 'dog_edit' dog_pk=dog.pk %}">Edit</a>
+                <a href="{% url 'dog_delete' dog_pk=dog.pk %}">Delete</a>  
+                
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+</div>
+
+
+
 {% endblock %}

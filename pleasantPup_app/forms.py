@@ -1,7 +1,7 @@
 from django import forms
 #from django.forms.widgets import DateTimeInput
 
-from . models import Profile, Dog
+from . models import Profile, Dog, Breed
 
 
 class DogForm(forms.ModelForm):
@@ -11,7 +11,6 @@ class DogForm(forms.ModelForm):
         widgets = {
             'name': forms.TextInput(attrs={'class': 'form-control col'}),
             'age': forms.TextInput(attrs={'class': 'form-control col'}),
-            'breed': forms.TextInput(attrs={'class': 'form-control col'}),
             'image_link': forms.TextInput(attrs={'class': 'form-control col'})
         }
 
