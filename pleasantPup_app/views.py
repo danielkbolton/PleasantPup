@@ -123,12 +123,14 @@ def post_list(request):
     context = {'posts': posts}
     return render(request, 'post_list.html', context)
 
-    
+@login_required    
 def post_create(request):
     if request.method == 'POST':
         form = PostForm(request.POST)
         if form.is_valid():
-            post = form.save()
+            post = form.save(commit=False)
+            post.author = request.user
+            post.save()
             return redirect('post_list')
     else:
         form = PostForm()
@@ -145,8 +147,11 @@ def post_detail(request,pk):
 
 
 
+
+@login_required
 def post_edit(request,pk):
     post = Post.objects.get(id=pk)
+    author = request.user
     if request.method == 'POST':
         form = PostForm(request.POST, instance=post)
         if form.is_valid():
@@ -158,9 +163,10 @@ def post_edit(request,pk):
     return render(request, 'post_form.html', context)
 
 
-
+@login_required
 def post_delete(request,pk):
-    Post.objects.get(id=pk).delete()
+    post= Post.objects.get(id=pk)
+    post.delete()
     return redirect('post_list')
 
 
@@ -175,6 +181,7 @@ def comment_create(request,pk):
         form = CommentForm(request.POST)
         if form.is_valid():
             comment = form.save(commit=False)
+            comment.author = request.user
             comment.post = post
             comment.save()
             return redirect('post_detail', pk=post.pk)

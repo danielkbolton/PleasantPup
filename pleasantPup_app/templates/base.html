@@ -9,65 +9,36 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    
-    
-
-
-
     <title>PleasantPup</title>
 </head>
 <body>
-        <nav>
-          <div class="logo">
-            <a href="{% url 'landing' %}"><h4>PleasantPup</h4></a>
-            
-          </div>
-          <ul class="nav-links">
-            
-            <li><a href="{% url 'about' %}">About</a></li>
-            
-            
-            {% if user.is_authenticated %}
-            <li><a href="{% url 'post_list' %}">Home</a></li>
-            <li><a href="{% url 'profile' %}">Profile</a></li>
-            <li><a href="{% url 'logout' %}">Logout</a></li>
-            {% else %}
-            <li><a href="{% url 'login' %}">Login</a></li>
-            <li><a href="{% url 'register' %}">Register</a></li>
-            {% endif %}
-          </ul>
-          <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-          </div>
-        </nav>
-
-    
-
-
-
-
-    
-{% block content %}
-{% endblock %}
-    
-
-
-
-
-
-
-    <footer>
-        <p id='copy-write'>&copy 2019  Pleasant Pup, LLC.</p>
-    </footer>
-
-
-
-
-
-
-    <!-- MAIN JAVASCRIPT -->
-    <script src="{% static 'js/app.js' %}"></script>    
+  <nav>
+    <div class="logo">
+      <a href="{% url 'landing' %}"><h4>PleasantPup</h4></a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="{% url 'about' %}">About</a></li>
+      {% if user.is_authenticated %}
+      <li><a href="{% url 'post_list' %}">Home</a></li>
+      <li><a href="{% url 'profile' %}">Profile</a></li>
+      <li><a href="{% url 'logout' %}">Logout</a></li>
+      {% else %}
+      <li><a href="{% url 'login' %}">Login</a></li>
+      <li><a href="{% url 'register' %}">Register</a></li>
+      {% endif %}
+    </ul>
+    <div class="burger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+  </nav>
+  {% block content %}
+  {% endblock %}
+  <footer>
+    <p id='copy-write'>&copy 2019  Pleasant Pup, LLC.</p>
+  </footer>
+  <!-- MAIN JAVASCRIPT -->
+  <script src="{% static 'js/app.js' %}"></script>    
 </body>
 </html>

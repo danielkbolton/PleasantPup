@@ -1,47 +1,20 @@
 {% extends 'base.html' %}
-
 {% block content %}
 
-
 <div id='post-container'>
-
-
-
-
   {% for post in posts %}
-
-
   <div class='post-container2'>
-    
-
     <div class="post">
-
       <p class='post-title'>{{ post.title }}</p>
-      <img src="{{post.image_link}}" alt="">
+      <img class='post-img' src="{{post.image_link}}" alt="">
       <p class='post-body'>{{post.body}}</p>
-
     </div>
-
-
-
     <div class="post-nav">
-
       <p class='posst-author'>Posted by <a href="#">{{ post.author }}</a></p>
-
       <a class='comments-link' href="{% url 'post_detail' pk=post.pk %}">comments</a>
-
     </div>
-   
-    
-
-
   </div>
-
-
-
   {% endfor %}
-<a href="{% url 'post_create' %}" class='new-post'>New Post</a>
-  
-
+  <a href="{% url 'post_create' %}" class='new-post'>New Post</a>
 </div>
 {% endblock %}

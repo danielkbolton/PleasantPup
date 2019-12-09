@@ -31,7 +31,7 @@ class PostForm(forms.ModelForm):
 
     class Meta:
         model = Post
-        fields = ('author','title','content','image_link')
+        fields = ('title','content','image_link')
 
 
 
@@ -39,4 +39,4 @@ class CommentForm(forms.ModelForm):
 
     class Meta:
         model = Comment
-        fields = ('author','content')
+        fields = ('content',)
