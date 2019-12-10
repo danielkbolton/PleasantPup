@@ -16,8 +16,9 @@
       {% endif %}
     </div>
     <div class="post-nav">
+        <!-- Author Profile img -->
         <img class='post-img' src="{{post.author.profile.image_link}}" alt="">
-      <p class='posst-author'>Posted by <a href="#">{{ post.author }}</a></p>
+      <p class='post-author'>Posted by <a href="{% url 'post_user_profile' pk=post.author.profile.pk  %}">{{ post.author }}</a></p>
       
       <a class='comments-link' href="{% url 'post_detail' pk=post.pk %}">comments</a>
     </div>

@@ -123,6 +123,13 @@ def post_list(request):
     context = {'posts': posts}
     return render(request, 'post_list.html', context)
 
+
+def post_user_profile(request, pk):
+    profile = Profile.objects.get(id=pk)
+    context = {'profile':profile}
+    return render(request, 'profile_view.html', context)
+    
+
 @login_required    
 def post_create(request):
     if request.method == 'POST':

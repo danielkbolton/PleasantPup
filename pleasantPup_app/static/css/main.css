@@ -5,8 +5,8 @@
 }
 
 
+/* 
 
-/* ---------- START BASE PAGE STYLING ---------- */
 
 nav{
     background: cornflowerblue;
@@ -90,10 +90,7 @@ footer {
 }
  
 
-/* ---------- END BASE PAGE STYLING ---------- */
 
-
-/* ---------- START LANDING PAGE STYLING ---------- */
 li {
     list-style: none;
 }
@@ -151,13 +148,6 @@ li {
 
 
 
-/* ---------- END LANDING PAGE STYLING ---------- */
-
-
-
-
-
-/* ----------------- Base ----------------- */
 
 :root {
     
@@ -185,7 +175,7 @@ li {
     box-shadow: 4px 4px 25px -8px rgba(0,0,0,0.75);
 }
 
-/*----------------- Register ----------------*/
+
 
 .register-form {
     max-width: 400px;
@@ -196,7 +186,7 @@ li {
     text-align: center;
 }
 
-/*----------------- Login ----------------*/
+
 
 .login-form {
     color: var(--text-primary);
@@ -208,7 +198,7 @@ li {
 
 
 
-/*------------------ Profile --------------------*/
+
 
 .btn {
     width:100px;
@@ -315,4 +305,13 @@ a {
 .post-img {
     width:150px;
     height: 201px;
+}
+ */
+
+
+
+.profile-pic {
+    width:300px;
+    height:401px;
+    border-radius: 50%;
 }
