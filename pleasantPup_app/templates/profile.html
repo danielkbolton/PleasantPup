@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+
+
+<div class="profile-section pic-or-form">
+    <h1>{{username}}</h1>
+        {% if prof_pic_link %}
+            <section class="prof-pic-section">
+                <img class="prof-pic"src="{{ prof_pic_link }}" alt="{{username}}'s profile picture">
+                <div class="prof-pic-btn prof-pic-btn-change">
+                    <a href="{% url 'prof_pic_edit' %}"><button class="btn edit-prof-pic">Change</button></a>
+                </div>
+            </section>
+        {% else %}
+        <section class="prof-pic-section" data-prof-edit="{% url 'prof_pic_edit' %}">
+            <p>Past image url below to update</p>
+            <form method="post" class="profile-pic-form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="prof-pic-btn">
+                    <button type="submit" class="btn">Save</button>
+                </div>
+            </form>
+        </section>
+    {% endif %}
+</div>
+
+
+
+
+        <h2>Your Dogs</h2>
+        <a href="{% url 'dog_create' %}">create dog</a>
+    {% for dog in user.dogs.all %}
+    
+        
+       
+                <a href="{% url 'dog_profile' dog_pk=dog.pk %}" target="_blank">
+                    
+                        <p>{{dog.name}}</p>
+                    
+                    <img src="{{dog.image_link}}" alt="Nature" style="width:100%">
+                </a>
+    
+    
+            <a href="{% url 'dog_edit' dog_pk=dog.pk %}">Edit</a>
+            <a href="{% url 'dog_delete' dog_pk=dog.pk %}">Delete</a>
+     
+    {% endfor %}
+
+
+      
+
+
+
+{% endblock %}

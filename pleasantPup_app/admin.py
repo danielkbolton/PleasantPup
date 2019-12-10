@@ -1,11 +1,14 @@
 from django.contrib import admin
-from .models import Profile
-from .models import Breed
-from .models import Dog
+from .models import Profile, Post, Comment
+from .models import Breed, Dog
+
 
 # Register your models here.
 
 
 admin.site.register(Profile)
+admin.site.register(Post)
+admin.site.register(Comment)
+
 admin.site.register(Breed)
 admin.site.register(Dog)
