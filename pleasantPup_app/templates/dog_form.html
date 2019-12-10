@@ -1,23 +1,26 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 {% block content %}
     {% if dog %}
         {% if dog.owner == user %}
-            <section>
-                <h1>{{header}}</h1>
-                <form method="POST">
+            <section class="form-section">
+                <form method="POST" class="form-dog">
+                    <img class="mb-4" src="https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-9/40677361_1939543929425195_5681993513563062272_n.png?_nc_cat=109&_nc_ohc=-rFa81zHy_YAQnDiPe3SHUe4VN9xZGV_v3jZttvf_PpiX9w7BHvAxsj6A&_nc_ht=scontent-lax3-1.xx&oh=4bc3c92011d6bc9bd3cae99749fbc5e6&oe=5E870A88" alt="" width="72" height="72">
+                    <h1 class="h3 mb-3 font-weight-normal">Edit your dogs info</h1>
                     {% csrf_token %}
                     {{form.as_p}}
-                    <button type="submit" class="btn">Submit</button>
+                    <button type="submit" class="btn btn-lg btn-primary btn-block">Submit</button>
                 </form>
             </section>
         {% endif %}
     {% else %}
-        <section>
-            <h1>{{header}}</h1>
-            <form method="POST">
+        <section class="form-section">    
+            <form method="POST" class="form-dog">
+                <img class="mb-4" src="https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-9/40677361_1939543929425195_5681993513563062272_n.png?_nc_cat=109&_nc_ohc=-rFa81zHy_YAQnDiPe3SHUe4VN9xZGV_v3jZttvf_PpiX9w7BHvAxsj6A&_nc_ht=scontent-lax3-1.xx&oh=4bc3c92011d6bc9bd3cae99749fbc5e6&oe=5E870A88" alt="" width="72" height="72">
+                <h1 class="h3 mb-3 font-weight-normal">Add your dog</h1>
                 {% csrf_token %}
                 {{form.as_p}}
-                <button type="submit" class="btn">Submit</button>
+                <button type="submit" class="btn btn-lg btn-primary btn-block">Submit</button>
             </form>
         </section>
     {% endif %}

@@ -1,29 +1,45 @@
 {% extends 'base.html' %}
 {% block content %}
-
-<div id='post-container'>
+<div class='posts-container'>
   {% for post in posts %}
-  <div class='post-container2'>
-    <div class="post">
-      <p class='post-title'>{{ post.title }}</p>
-      <img class='post-img' src="{{post.image_link}}" alt="">
-      <p class='post-body'>{{post.content}}</p>
-      {% if post.author == user %}
-      <div>
-        <a class='edit_post' href="{% url 'post_edit' pk=post.pk %}">Edit</a> /
-        <a class='delete_post' href="{% url 'post_delete' pk=post.pk %}">Delete</a>
-      </div>
-      {% endif %}
-    </div>
-    <div class="post-nav">
+
+
+    <div class='post-container'>
+
+      <div class="post-nav">
         <!-- Author Profile img -->
-        <img class='post-img' src="{{post.author.profile.image_link}}" alt="">
-      <p class='post-author'>Posted by <a href="{% url 'post_user_profile' pk=post.author.profile.pk  %}">{{ post.author }}</a></p>
-      
-      <a class='comments-link' href="{% url 'post_detail' pk=post.pk %}">comments</a>
+        <a href="{% url 'post_user_profile' pk=post.author.profile.pk  %}">
+          <img class='prof-pic-sm' src="{{post.author.profile.image_link}}" alt=""><br>
+          {{post.author}}
+        </a>      
+      </div>
+
+      <div class="post">
+        <h3 class='post-title'>{{ post.title }}</h3>
+        <img src="{{post.image_link}}" class="rounded mx-auto d-block img-fluid" alt="...">
+        <p class='post-body'>{{post.content}}</p>
+      </div>
+
+
+
+      <div class="post-nav">
+        <div>
+          <a class='comments-link' href="{% url 'post_detail' pk=post.pk %}">comments</a>
+        </div>
+        {% if post.author == user %}
+        <div>
+          <a class='edit_post' href="{% url 'post_edit' pk=post.pk %}">Edit</a> /
+          <a class='delete_post' href="{% url 'post_delete' pk=post.pk %}">Delete</a>
+        </div>
+        {% endif %}
+      </div>
+
+
     </div>
-  </div>
   {% endfor %}
-  <a href="{% url 'post_create' %}" class='new-post'>New Post</a>
+
+      <a href="{% url 'post_create' %}" class="btn btn-secondary my-2 my-sm-0">New Post</a>
+  
+  
 </div>
 {% endblock %}

@@ -3,9 +3,69 @@
     padding:0px;
 }
 
-
 #logo{
     width:50px;
     height:50px;
     border-radius: 50%;
+}
+
+.form-section{
+    height: 100vh;
+}
+
+.form-signin{
+    width:30%;
+    margin:0 auto;
+}
+
+.form-dog{
+    width:30%;
+    margin:0 auto;
+}
+
+
+.prof-pic-sm{
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+}
+
+
+.posts-container{
+    border:1px solid black;
+    width:50%;
+    margin-top: 30px !important;
+    margin:0 auto;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.post-container{
+    border:1px solid black;
+    margin:50px;
+
+}
+
+
+.post{
+    text-align: center;
+}
+
+.post-body{
+    margin: 10px;
+    border: 1px solid gray;
+}
+
+.post-nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-nav a{
+    margin:10px;
+}
+
+
+.btn{
+    margin: auto;
 }

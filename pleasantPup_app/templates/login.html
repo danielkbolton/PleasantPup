@@ -1,19 +1,13 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
-
-{% block content %}
-
-<h1 class="animated bounceIn">Login</h1>
-
-    
+{% block content %}    
     {% if error %}
         <p style="background-color:firebrick;">{{error}}</p>
     {% endif %}
-
     <section class="form-section login-form">
-        <form action="{% url 'login' %}" method="POST">
-                <img class="mb-4" src="https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-9/40677361_1939543929425195_5681993513563062272_n.png?_nc_cat=109&_nc_ohc=-rFa81zHy_YAQnDiPe3SHUe4VN9xZGV_v3jZttvf_PpiX9w7BHvAxsj6A&_nc_ht=scontent-lax3-1.xx&oh=4bc3c92011d6bc9bd3cae99749fbc5e6&oe=5E870A88" alt="" width="72" height="72">
-                <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <form action="{% url 'login' %}" method="POST" class="form-signin">
+            <img class="mb-4" src="https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-9/40677361_1939543929425195_5681993513563062272_n.png?_nc_cat=109&_nc_ohc=-rFa81zHy_YAQnDiPe3SHUe4VN9xZGV_v3jZttvf_PpiX9w7BHvAxsj6A&_nc_ht=scontent-lax3-1.xx&oh=4bc3c92011d6bc9bd3cae99749fbc5e6&oe=5E870A88" alt="" width="72" height="72">
+            <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
             {% csrf_token %}
             <p>
                 <label for="username">Username</label>
@@ -28,9 +22,4 @@
             </div>
         </form>
     </section>
-
-
-
-
-
-    {% endblock%}
+{% endblock%}

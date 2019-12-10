@@ -58,7 +58,7 @@ class Dog(models.Model):
     name = models.CharField(max_length=200)
     age = models.TextField(default=0)
     breed = models.ForeignKey(Breed, on_delete=models.CASCADE, related_name='breeds')
-    image_link = models.TextField(default="No image provided")
+    image_link = models.TextField(default="Image url")
     # image_upload = models.ImageField(upload_to='prof_images/')
 
     def __str__(self):
