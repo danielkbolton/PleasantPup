@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class='posts-container'>
+  {% for post in posts %}
+
+
+    <div class='post-container'>
+
+      <div class="post-nav">
+        <!-- Author Profile img -->
+        <a href="{% url 'post_user_profile' pk=post.author.profile.pk  %}">
+          <img class='prof-pic-sm' src="{{post.author.profile.image_link}}" alt=""><br>
+          {{post.author}}
+        </a>      
+      </div>
+
+      <div class="post">
+        <h3 class='post-title'>{{ post.title }}</h3>
+        <img src="{{post.image_link}}" class="rounded mx-auto d-block img-fluid" alt="...">
+        <p class='post-body'>{{post.content}}</p>
+      </div>
+
+
+
+      <div class="post-nav">
+        <div>
+          <a class='comments-link' href="{% url 'post_detail' pk=post.pk %}">comments</a>
+        </div>
+        {% if post.author == user %}
+        <div>
+          <a class='edit_post' href="{% url 'post_edit' pk=post.pk %}">Edit</a> /
+          <a class='delete_post' href="{% url 'post_delete' pk=post.pk %}">Delete</a>
+        </div>
+        {% endif %}
+      </div>
+
+
+    </div>
+  {% endfor %}
+
+      <a href="{% url 'post_create' %}" class="btn btn-secondary my-2 my-sm-0">New Post</a>
+  
+  
+</div>
+{% endblock %}

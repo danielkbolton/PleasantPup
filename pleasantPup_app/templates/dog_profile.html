@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+
+    <h1>{{dog.name}}</h1>
+    <p>{{dog.age}} Old</p>
+    <img class='dog-proPick' src="{{dog.image_link}}" alt="">
+    <h4>Owner</h4>
+    <p>{{dog.owner.username}}</p>
+    <h4>Breed</h4>
+    <p>{{dog.breed.breed}}</p>
+    <h4>Physical Characteristics</h4>
+    <p>{{dog.breed.physical_characteristics}}</p>
+    <h4>Personality</h4>
+    <p>{{dog.breed.personality_temperament}}</p>
+    <h4>Care</h4>
+    <p>{{dog.breed.care}}</p>
+    <h4>Health</h4>
+    <p>{{dog.breed.health}}</p>
+    <h4>History</h4>
+    <p>{{dog.breed.history_background}}</p>
+
+
+{% endblock %}
