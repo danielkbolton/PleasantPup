@@ -6,12 +6,12 @@
 
 
 <div class="profile-section pic-or-form">
-    <h1>{{username}}</h1>
+    <h3>{{username}}</h3>
         {% if prof_pic_link %}
             <section class="prof-pic-section">
-                <img class="prof-pic"src="{{ prof_pic_link }}" alt="{{username}}'s profile picture">
+                <img class="prof-pic-md"src="{{ prof_pic_link }}" alt="{{username}}'s profile picture">
                 <div class="prof-pic-btn prof-pic-btn-change">
-                    <a href="{% url 'prof_pic_edit' %}"><button class="btn edit-prof-pic">Change</button></a>
+                    <a href="{% url 'prof_pic_edit' %}"><button class="btn btn-md btn-primary ">Change</button></a>
                 </div>
             </section>
         {% else %}
