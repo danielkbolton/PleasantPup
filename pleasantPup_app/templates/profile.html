@@ -9,7 +9,7 @@
     <h1>{{username}}</h1>
         {% if prof_pic_link %}
             <section class="prof-pic-section">
-                <img src="{{ prof_pic_link }}" alt="profile picture">
+                <img class="prof-pic"src="{{ prof_pic_link }}" alt="{{username}}'s profile picture">
                 <div class="prof-pic-btn prof-pic-btn-change">
                     <a href="{% url 'prof_pic_edit' %}"><button class="btn edit-prof-pic">Change</button></a>
                 </div>
@@ -30,28 +30,26 @@
 
 
 
-<div class="container">
+
         <h2>Your Dogs</h2>
         <a href="{% url 'dog_create' %}">create dog</a>
     {% for dog in user.dogs.all %}
-    <div class="row">
-        <div class="col-md-4">
-            <div class="thumbnail">
+    
+        
+       
                 <a href="{% url 'dog_profile' dog_pk=dog.pk %}" target="_blank">
-                    <div class="caption">
+                    
                         <p>{{dog.name}}</p>
-                    </div>
+                    
                     <img src="{{dog.image_link}}" alt="Nature" style="width:100%">
                 </a>
-            </div>
-        </div>
-    </div>
-    <div class="dog-buttons">
+    
+    
             <a href="{% url 'dog_edit' dog_pk=dog.pk %}">Edit</a>
             <a href="{% url 'dog_delete' dog_pk=dog.pk %}">Delete</a>
-        </div>
+     
     {% endfor %}
-</div>
+
 
       
 
