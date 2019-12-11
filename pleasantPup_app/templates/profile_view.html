@@ -13,7 +13,7 @@
 
 <div class="dog-section">
 
-        {% for dog in user.dogs.all %}
+        {% for dog in profile.user.dogs.all %}
                 <div class="dog-container">
                     <div>
                         <a href="{% url 'dog_profile' dog_pk=dog.pk %}">
