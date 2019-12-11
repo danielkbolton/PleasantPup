@@ -1,1 +1,1 @@
-web: gunicorn {pleasantPup_django}.wsgi --log-file -
+web: gunicorn pleasantPup_django.wsgi --log-file -
