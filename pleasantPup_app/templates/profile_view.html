@@ -4,11 +4,12 @@
 {% block content %}
 
 
-<p>{{profile.user.username}}</p>
-<img class='prof-pic' src="{{profile.image_link}}" alt="{{profile.user.username}}'s Profile Picture">
-
-
-
+<div class="profile-section pic-or-form">
+    <h3>{{profile.user.username}}</h3>
+    <section class="prof-pic-section">
+        <img class="prof-pic-md" src="{{profile.image_link}}" alt="{{profile.user.username}}'s Profile Picture">
+    </section>
+</div>
 
 
 <div class="dog-section">
