@@ -30,6 +30,8 @@ footer {
 
 .form-section{
     height: 100vh;
+    width:25%;
+    margin:0 auto;
 }
 
 .form-signin{
