@@ -28,27 +28,34 @@
     {% endif %}
 </div>
 
-
-
-
+<div>
         <h2>Your Dogs</h2>
         <a href="{% url 'dog_create' %}">create dog</a>
+</div>
+
+
+
+
+
+        <div class="dog-section">
+
     {% for dog in user.dogs.all %}
-    
-        
-       
-                <a href="{% url 'dog_profile' dog_pk=dog.pk %}" target="_blank">
-                    
+            <div class="dog-container">
+                <div>
+                    <a href="{% url 'dog_profile' dog_pk=dog.pk %}" target="_blank">
                         <p>{{dog.name}}</p>
-                    
-                    <img src="{{dog.image_link}}" alt="Nature" style="width:100%">
-                </a>
-    
-    
-            <a href="{% url 'dog_edit' dog_pk=dog.pk %}">Edit</a>
-            <a href="{% url 'dog_delete' dog_pk=dog.pk %}">Delete</a>
+                        <img src="{{dog.image_link}}" alt="Nature" style="width: 200px;">
+                    </a>
+                </div>
+                <br>
+                <div>
+                    <p><a href="{% url 'dog_edit' dog_pk=dog.pk %}">Edit</a> / <a href="{% url 'dog_delete' dog_pk=dog.pk %}">Delete</a></p>
+                </div>
+            </div>
+            
      
     {% endfor %}
+        </div>
 
 
       

@@ -81,3 +81,33 @@
   
     margin: 0 auto;
 }
+
+
+/* ---------- USER PROFILE ---------- */
+/* 
+.dog-section{
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+ */
+
+
+.dog-section {
+    width: 50%;
+    border: 2px solid var(--olive-green);
+    padding: 30px;
+    margin: 0 auto;
+    -webkit-box-shadow: 4px 4px 25px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 4px 25px -8px rgba(0,0,0,0.75);
+    box-shadow: 4px 4px 25px -8px rgba(0,0,0,0.75);
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+};
+
+

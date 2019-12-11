@@ -11,27 +11,23 @@
 
 
 
-    <a href="{% url 'dog_create' %}">create dog</a>
-      
-    {% for dog in profile.user.dogs.all %}
-    
-        
-            
-                <a href="{% url 'dog_profile' dog_pk=dog.pk %}" target="_blank">
-                    
-                        <p>{{dog.name}}</p>
-                   
-                    <img class='dog-prof' src="{{dog.image_link}}" alt="Nature" style="width:100%">
-              
-            
-           
-                <a href="{% url 'dog_edit' dog_pk=dog.pk %}">Edit</a>
-                <a href="{% url 'dog_delete' dog_pk=dog.pk %}">Delete</a>
-          
-        
-    
+<div class="dog-section">
 
-    {% endfor %}
+        {% for dog in user.dogs.all %}
+                <div class="dog-container">
+                    <div>
+                        <a href="{% url 'dog_profile' dog_pk=dog.pk %}">
+                            <p>{{dog.name}}</p>
+                            <img src="{{dog.image_link}}" alt="Nature" style="width: 200px;">
+                        </a>
+                    </div>
+                    <br>
+
+                </div>
+                
+         
+        {% endfor %}
+            </div>
 
 
 
