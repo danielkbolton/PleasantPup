@@ -7,21 +7,52 @@
 
     <h1>{{dog.name}}</h1>
     <p>{{dog.age}} Old</p>
-    <img class='dog-proPick' src="{{dog.image_link}}" alt="" style="width: 200px;">
+    <img class='prof-pic-md' src="{{dog.image_link}}" alt="" style="width: 200px;">
     <h4>Owner</h4>
     <p>{{dog.owner.username}}</p>
     <h4>Breed</h4>
     <p>{{dog.breed.breed}}</p>
-    <h4>Physical Characteristics</h4>
-    <p>{{dog.breed.physical_characteristics}}</p>
-    <h4>Personality</h4>
-    <p>{{dog.breed.personality_temperament}}</p>
-    <h4>Care</h4>
-    <p>{{dog.breed.care}}</p>
-    <h4>Health</h4>
-    <p>{{dog.breed.health}}</p>
-    <h4>History</h4>
-    <p>{{dog.breed.history_background}}</p>
 
+
+
+
+
+    <div class="list-group">
+
+        <div class="list-group-item flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Physical Characteristics</h5>
+            </div>
+            <p class="mb-1">{{dog.breed.physical_characteristics}}</p>
+        </div>
+        <div class="list-group-item flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Personality</h5>
+            </div>
+            <p class="mb-1">{{dog.breed.personality_temperament}}</p>
+        </div>
+        <div class="list-group-item flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Care</h5>
+            </div>
+            <p class="mb-1">{{dog.breed.care}}</p>
+        </div>
+
+        <div class="list-group-item flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Health</h5>
+            </div>
+            <p class="mb-1">{{dog.breed.health}}</p>
+        </div>
+        <div class="list-group-item flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">History</h5>
+            </div>
+            <p class="mb-1">{{dog.breed.history_background}}</p>
+        </div>
+
+    
+    
+    </div>
 
 {% endblock %}
