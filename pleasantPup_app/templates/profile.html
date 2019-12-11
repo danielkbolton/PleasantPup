@@ -6,12 +6,12 @@
 
 
 <div class="profile-section pic-or-form">
-    <h1>{{username}}</h1>
+    <h3>{{username}}</h3>
         {% if prof_pic_link %}
             <section class="prof-pic-section">
-                <img class="prof-pic"src="{{ prof_pic_link }}" alt="{{username}}'s profile picture">
+                <img class="prof-pic-md"src="{{ prof_pic_link }}" alt="{{username}}'s profile picture">
                 <div class="prof-pic-btn prof-pic-btn-change">
-                    <a href="{% url 'prof_pic_edit' %}"><button class="btn edit-prof-pic">Change</button></a>
+                    <a href="{% url 'prof_pic_edit' %}"><button class="btn btn-md btn-primary ">Change</button></a>
                 </div>
             </section>
         {% else %}
@@ -28,27 +28,34 @@
     {% endif %}
 </div>
 
-
-
-
+<div>
         <h2>Your Dogs</h2>
         <a href="{% url 'dog_create' %}">create dog</a>
+</div>
+
+
+
+
+
+        <div class="dog-section">
+
     {% for dog in user.dogs.all %}
-    
-        
-       
-                <a href="{% url 'dog_profile' dog_pk=dog.pk %}" target="_blank">
-                    
+            <div class="dog-container">
+                <div>
+                    <a href="{% url 'dog_profile' dog_pk=dog.pk %}" target="_blank">
                         <p>{{dog.name}}</p>
-                    
-                    <img src="{{dog.image_link}}" alt="Nature" style="width:100%">
-                </a>
-    
-    
-            <a href="{% url 'dog_edit' dog_pk=dog.pk %}">Edit</a>
-            <a href="{% url 'dog_delete' dog_pk=dog.pk %}">Delete</a>
+                        <img src="{{dog.image_link}}" alt="Nature" style="width: 200px;">
+                    </a>
+                </div>
+                <br>
+                <div>
+                    <p><a href="{% url 'dog_edit' dog_pk=dog.pk %}">Edit</a> / <a href="{% url 'dog_delete' dog_pk=dog.pk %}">Delete</a></p>
+                </div>
+            </div>
+            
      
     {% endfor %}
+        </div>
 
 
       
