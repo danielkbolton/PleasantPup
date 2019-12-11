@@ -6,6 +6,7 @@
 html, body{
     min-height: 100%;
     margin: 0;
+    background: rgba(41,56,127,.2);
 }
 
 footer {
@@ -49,6 +50,12 @@ footer {
     border: 1px solid black;
 }
 
+
+.profile-section{
+    margin-left: 50px;
+}
+
+
 .prof-pic-md{
     width:200px;
     height:200px;
@@ -71,7 +78,8 @@ footer {
     -moz-box-shadow: 4px 4px 25px -8px rgba(0,0,0,0.75);
     box-shadow: 4px 4px 25px -8px rgba(0,0,0,0.75);
     border-radius: 20px;
-
+    background:whitesmoke;
+    margin-bottom: 70px;
 }
 
 
@@ -140,6 +148,11 @@ footer {
     flex-wrap: wrap;
 };
 
+
+.dog-thing{
+    width:50%;
+    margin-left: 90%;
+}
 
 /* ---------- START TRAINING PAGE ---------- */
 
