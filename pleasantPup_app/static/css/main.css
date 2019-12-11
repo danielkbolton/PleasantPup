@@ -3,18 +3,23 @@
     padding:0px;
     box-sizing: border-box;
 }
-
-
-
-
-footer{
-    background:#007bff;
-    position: sticky;
-    overflow: hidden;
-    bottom: 0px;
-    width:100%;
+html, body{
+    min-height: 100%;
+    margin: 0;
 }
 
+footer {
+    background:#29387F;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+.bg-primary{
+    background-color: #29387F !important;
+}
 
 #logo{
     width:50px;
