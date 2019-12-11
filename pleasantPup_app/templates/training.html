@@ -5,43 +5,85 @@
 
 
 <!--------- START BASIC COMMANDS ---------->
-<div class="container">
-    <div class="row">
-        <div class="col-md-4">
-            <a href="{% url 'name' %}"><h2>Name Recognition</h2></a>
-            <p>It seems a little silly to formally teach your dog it's name, but this dog training command can be very useful to call your dog's attention. When formally trained it can be more reliable too.. </p>
-        </div>
-        <div class="col-md-4">
-            <a href="{% url 'sit' %}"><h2>Sit</h2></a>
-            <p>This is the most basic of all dog obedience commands. All dogs can learn this cue in 5 minutes. I separated this command into 3 articles, from basic to advance levels to teach you how to progress with ANY dog training command until you get a reliable response. </p>  
-            <a href="{% url 'sit2' %}">Sit Level 2</a>
-            <a href="{% url 'sit3' %}">Sit Level 3</a>
-        </div>
-        <div class="col-md-4">
-            <a href="{% url 'down' %}"><h2>Down</h2></a>
-            <p>Also a basic dog command but very useful. A dog that is laying down cannot jump, steal things and if you train down with a head down, he can't bark either!</p>
-        </div>
-        <div class="col-md-4">
-            <a href="{% url 'stand' %}"><h2>Stand</h2></a>
-            <p>Why would you ever want to teach the dog command stand to your dog? Many reasons, you can get him to stand up from the couch/bed easily and you can keep him in a stand position at the vet.</p>
-        </div>
-        <div class="col-md-4">
-            <a href="{% url 'stay' %}"><h2>Stay</h2></a>
-            <p>Very useful command to keep your dog in one position for a longer period of time.</p>
-        </div>
-        <div class="col-md-4">
-            <a href="{% url 'settle' %}"><h2>Settle</h2></a>
-            <p> If you need your dog to stop running around like crazy, this is the command to teach him/her.</p>
-        </div>
-        <div class="col-md-4">
-            <a href="{% url 'come' %}"><h2>Come When Called</h2></a>
-            <p>One of the most important dog training commands to teach your canine friend. If he can be recalled, he won't run away.</p>
-        </div>
-    </div>
-    <hr>
-</div> 
-<!--------- END BASIC COMMANDS ---------->
-    
 
+<h1>Basic Commands</h1>
+<div class="list-group">
+
+    <!-- start name recognition -->
+    <a href="{% url 'name' %}" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Name Recognition</h5>
+        </div>
+        <p class="mb-1">It seems a little silly to formally teach your dog it's name, but this dog training command can be very useful to call your dog's attention. When formally trained it can be more reliable too..</p>
+    </a>
+
+
+    <!-- start sit -->
+    <a href="{% url 'sit' %}" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Sit</h5>
+        </div>
+        <p class="mb-1">This is the most basic of all dog obedience commands. All dogs can learn this cue in 5 minutes. I separated this command into 3 articles, from basic to advance levels to teach you how to progress with ANY dog training command until you get a reliable response.</p>
+    </a>
+
+    <!-- start sit level two -->
+    <a href="{% url 'sit2' %}" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Sit Level2</h5>
+        </div>
+        <p class="mb-1">This is the most basic of all dog obedience commands. All dogs can learn this cue in 5 minutes. I separated this command into 3 articles, from basic to advance levels to teach you how to progress with ANY dog training command until you get a reliable response.</p>
+    </a>
+
+    <!-- start sit level three -->
+    <a href="{% url 'sit3' %}" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Sit Level3</h5>
+        </div>
+        <p class="mb-1">This is the most basic of all dog obedience commands. All dogs can learn this cue in 5 minutes. I separated this command into 3 articles, from basic to advance levels to teach you how to progress with ANY dog training command until you get a reliable response.</p>
+    </a>
+
+    <!-- start down -->
+    <a href="{% url 'down' %}" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Down</h5>
+        </div>
+        <p class="mb-1">Also a basic dog command but very useful. A dog that is laying down cannot jump, steal things and if you train down with a head down, he can't bark either!</p>
+    </a>
+
+    <!-- start stand -->
+    <a href="{% url 'stand' %}" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Stand</h5>
+        </div>
+        <p class="mb-1">Why would you ever want to teach the dog command stand to your dog? Many reasons, you can get him to stand up from the couch/bed easily and you can keep him in a stand position at the vet.</p>
+    </a>
+
+    <!-- start stay -->
+    <a href="{% url 'stay' %}" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Stay</h5>
+        </div>
+        <p class="mb-1">Very useful command to keep your dog in one position for a longer period of time.</p>
+    </a>
+
+    <!-- start settle -->
+    <a href="{% url 'settle' %}" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Settle</h5>
+        </div>
+        <p class="mb-1">If you need your dog to stop running around like crazy, this is the command to teach him/her.</p>
+    </a>
+
+    <!-- start come when called -->
+    <a href="{% url 'come' %}" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Come when called</h5>
+        </div>
+        <p class="mb-1">One of the most important dog training commands to teach your canine friend. If he can be recalled, he won't run away.</p>
+    </a>
+
+</div>
+
+<!--------- END BASIC COMMANDS ---------->
 
 {% endblock %}
